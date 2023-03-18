@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<title>Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="index.js"></script>
+
+<script>
+
+</script>
+
+<body class="w3-white" background="tile.jpg" onload="">
+
+	<!--Navigation bar-->
+	
+	<div class="w3-top">
+		<div class="w3-card w3-large w3-center w3-border w3-round-large w3-red w3-sans-serif" style="font-family: 'Comic Sans MS', cursive, sans-serif;">
+			<p><i>SecRBAC: Secure Data In The Cloud</i></p>
+		</div>
+		<div class="w3-bar w3-light-grey w3-border w3-round-large">
+			<a id="navbutton0" href="home.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a>
+			<a id="navbutton1" class="w3-bar-item w3-button" href="about.html">About</a>
+			<button id="navbutton2" class="btn w3-bar-item w3-button" onclick="status(1)">Cloud Service Provider</button>
+			<button id="navbutton3" class="btn w3-bar-item w3-button" onclick="status(2)">Data Owner</button>
+			<button id="navbutton4" class="btn w3-bar-item w3-button" onclick="status(3)">End User</button>
+			<button id="navbutton5" class="btn w3-bar-item w3-button" onclick="status(4)">Authorizer</button>
+			<a id="navbutton6" href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+			<input type="text" class="w3-bar-item w3-input w3-white w3-round-jumbo w3-right" placeholder="Search..">
+		</div>
+	</div>
+	<br><br><br><br>
+	<!--End navigation bar-->
+
+	<!--3 column layout-->
+	<div class="w3-row">
+		
+		<!--column1 - 1/third-->
+		<div class="w3-green w3-container w3-third w3-center w3-margin-top" style="height:564px;">
+			<!--header left-->
+			<div class="w3-card w3-light-grey w3-round w3-margin">
+				<p>w3-card</p>
+			</div>
+			<!--End header left-->
+			<div class="w3-card-4 w3-margin">
+				<img src="4.jpg" style="width:100%">
+				<div class="w3-bar-block w3-light-grey">
+					<a class="w3-bar-item w3-button" href="#">Link 1</a>
+					<a class="w3-bar-item w3-button" href="#">Link 2</a>
+					<a class="w3-bar-item w3-button" href="#">Link 3</a>
+					<a class="w3-bar-item w3-button" href="#">Link 4</a>
+				</div>
+				
+			</div>
+		</div>
+		<!--End column1-->  
+
+		<!--column2 - 1/third-->
+		<div class="w3-orange w3-container w3-third w3-center w3-margin-top" style="height:564px;">
+			<!--header mid-->
+			<div class="w3-card w3-light-grey w3-round w3-margin">
+				<p>w3 card</p>
+			</div>
+			<!--End header mid-->
+			<!--Type-->
+			<div class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin-right w3-margin-left w3-margin-top">
+				<select class="w3-select w3-round" name="type_login" id="type_login" onchange="status(0)" required>
+					<option id="csp" value="1">cloud_service_provider</option>
+					<option id="do" value="2">data_owner</option>
+					<option id="eu" value="3">end_user</option>
+					<option id="au" value="4">authorizor</option>
+				</select>
+			</div>
+			<!--End type-->
+			<!--Tab group-->
+			<div class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin-right w3-margin-left">
+				<div class="w3-half">
+					<div class="w3-panel w3-padding-0 w3-border-right">
+					<button class="tablink2 w3-button w3-block w3-round w3-teal" onclick="showform('signup')">Sign up</button>
+					</div>
+				</div>
+				<div class="w3-half">
+					<div class="w3-panel w3-padding-0">
+					<button class="tablink2 w3-button w3-block w3-round w3-teal" onclick="showform('login')">Log in</button>
+					</div>
+				</div>
+			</div>
+			<!--End tab group-->
+			<div id="signup" class="formcontent">
+				<!--Signup form-->
+					<form action="signupxxx.jsp" onsubmit="return validsignin()" method="post" name="signup" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin-right w3-margin-left w3-margin-bottom">
+					<!--Name-->
+					<div class="w3-row w3-section">
+						<div class="w3-rest">
+							<div class="w3-half w3-padding-right">
+								<input class="w3-input w3-border w3-round" name="first_signup" type="text" placeholder="First Name" required>
+							</div>
+							<div class="w3-half">
+								<input class="w3-input w3-border w3-round" name="last_signup" type="text" placeholder="Last Name" required>
+							</div>
+						</div>
+					</div>
+					<!--End name-->
+					<!--Password-->
+					<div class="w3-row w3-section">
+						<div class="w3-rest">
+							<input class="w3-input w3-border w3-round" name="password_signup" type="password" placeholder="Password" required>
+						</div>
+					</div>
+					<!--End password-->
+					<!--Email-->
+					<div class="w3-row w3-section">
+						<div class="w3-rest">
+							<input class="w3-input w3-border w3-round" name="email_signup" type="email" placeholder="Email" required>
+						</div>
+					</div>
+					<!--End email-->
+					<!--Phone-->
+					<div class="w3-row w3-section">
+						<div class="w3-rest">
+							<input class="w3-input w3-border w3-round" name="phone_signup" type="tel" placeholder="Phone" required>
+						</div>
+					</div>
+					<!--End phone-->
+					<!--City-->		
+					<div class="w3-row w3-section">
+						<select class="w3-select w3-round" name="city_signup" required>
+							<option value="" disabled selected>Choose City</option>
+							<option value="1">Mumbai</option>
+							<option value="2">Bengaluru</option>
+							<option value="3">Chennai</option>
+							<option value="4">Kolkata</option>
+							<option value="5">Pune</option>
+							<option value="6">Jaipur</option>
+						</select>
+					</div>
+					<!--End city-->
+					<input class="w3-button w3-round w3-block w3-section w3-blue w3-ripple w3-padding" type="submit" value="Send">
+				</form>
+				<!--End signup form-->
+			</div>
+			<div id="login" class="formcontent" style="display:none">
+				<!--Login form-->
+				<form action="loginxxx.jsp" method="post" class="w3-container w3-card-4 w3-light-grey w3-text-green w3-margin-right w3-margin-left w3-margin-bottom">
+					<!--Name-->
+					<div class="w3-row w3-section">
+						<div class="w3-rest">
+							<input class="w3-input w3-border w3-round" name="user_login" type="text" placeholder="User Name">
+						</div>
+					</div>
+					<!--End name-->
+					<!--Password-->
+					<div class="w3-row w3-section">
+						<div class="w3-rest">
+							<input class="w3-input w3-border w3-round" name="password_login" type="password" placeholder="Password">
+						</div>
+					</div>
+					<!--End password-->
+					<button class="w3-button w3-round w3-block w3-section w3-blue w3-ripple w3-padding">Send</button>
+				</form>
+				<!--End login form-->
+			</div>
+		</div>
+		<!--End column2-->
+	  
+		<!--column3 - third-->
+		<div class="w3-green w3-container w3-third w3-center w3-margin-top" style="height:564px;">
+			<!--header left-->
+			<div class="w3-card w3-light-grey w3-round w3-margin">
+				<p>w3-card</p>
+			</div>
+			<!--End header right-->
+			<div class="w3-card-4 w3-margin">
+				<img src="5.jpg" style="width:100%">
+				<div class="w3-bar-block w3-light-grey">
+					<a class="w3-bar-item w3-button" href="#">Link 1</a>
+					<a class="w3-bar-item w3-button" href="#">Link 2</a>
+					<a class="w3-bar-item w3-button" href="#">Link 3</a>
+					<a class="w3-bar-item w3-button" href="#">Link 4</a>
+					<a class="w3-bar-item w3-button" href="#">Link 5</a>
+				</div>
+			</div>
+		</div>
+		<!--End column3-->
+	</div>
+	<!--End 3 grid layout-->
+</body>
+</html> 
